@@ -1,33 +1,37 @@
-Identifier: eos0aaa
-Slug: template-model
+Identifier: eos92m1
+Slug: transpharmer
 Status: In progress
-Title: This is a template model
-Description: |
-  This is a description of the template model.
-  You can use multiple lines in this description.
+Title: TransPharmer Pharmacophore-Informed Molecule Generation
+Description: Generates new molecules that share the topological pharmacophore of
+  an input reference compound but often differ in scaffold, supporting scaffold 
+  hopping. A GPT-style SMILES decoder conditioned on a 72-bit pharmacophore 
+  fingerprint was trained on about 1.27 million GuacaMol (ChEMBL-derived) 
+  molecules. In the original study, designs seeded with a PLK1 inhibitor were 
+  synthesised and three of four showed sub-micromolar activity, the best at 5.1 
+  nM. Sampling is stochastic, so outputs need filtering.
 Deployment:
   - Local
   - Online
 Source: Local, Online
 Source Type: Internal, Replicated, External
 Task: Annotation, Representation, Sampling
-Subtask: Property calculation or prediction, Activity prediction, Featurization, Projection, Similarity search, Generation
-Input: 
+Subtask: Property calculation or prediction, Activity prediction, Featurization,
+  Projection, Similarity search, Generation
+Input:
   - Compound
 Input Dimension: 1
-Output: 
+Output:
   - Value
   - Score
   - Compound
   - Text
 Output Dimension: 1
 Output Consistency: Fixed, Variable
-Interpretation: |
-  The output of this template model should be interpreted like this.
+Interpretation: The output of this template model should be interpreted like 
+  this.
 Tag:
-  - Tag 1
-  - Tag 2
-  - Tag 3
+  - Compound generation
+  - Chemical language model
 Biomedical Area:
   - Biomedical Area 1
   - Biomedical Area 2
@@ -36,6 +40,7 @@ Target Organism:
   - Target Organism 2
 Publication Type: Peer reviewed, Preprint, Other
 Publication Year: 2026
-Publication: https://example.com
-Source Code: https://example.com
-License: GPL-3.0-or-later, MIT, Apache-2.0...
+Publication: https://www.nature.com/articles/s41467-025-56349-0
+Source Code: https://github.com/iipharma/transpharmer-repo
+License: MIT
+Contributor: arnaucoma24
