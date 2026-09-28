@@ -3,13 +3,13 @@ Slug: transpharmer
 Status: In progress
 Title: TransPharmer Pharmacophore-Informed Molecule Generation
 Description: Generates new molecules that share the topological pharmacophore of
-  an input reference compound while often changing its scaffold, useful for
-  scaffold hopping. A GPT-style SMILES decoder prompted with a 72-bit
-  pharmacophore fingerprint was trained on about 1.27 million GuacaMol
-  (ChEMBL-derived) molecules. Designs seeded with a PLK1 inhibitor were
-  synthesised, and three of four were sub-micromolar, the best at 5.1 nM.
-  Sampling is stochastic, only about 18% of raw samples were valid and unique
-  in that run, and outputs often keep moieties of the reference.
+  an input reference compound while often changing its scaffold, useful for 
+  scaffold hopping. A GPT-style SMILES decoder prompted with a 72-bit 
+  pharmacophore fingerprint was trained on about 1.27 million GuacaMol 
+  (ChEMBL-derived) molecules. Designs seeded with a PLK1 inhibitor were 
+  synthesised, and three of four were sub-micromolar, the best at 5.1 nM. 
+  Sampling is stochastic, only about 18% of raw samples were valid and unique in
+  that run, and outputs often keep moieties of the reference.
 Deployment:
   - Local
 Source: Local
@@ -23,7 +23,8 @@ Output:
   - Compound
 Output Dimension: 100
 Output Consistency: Variable
-Interpretation: Up to 100 generated molecules as SMILES that share the input compound's topological pharmacophore.
+Interpretation: Up to 100 generated molecules as SMILES that share the input 
+  compounds topological pharmacophore.
 Tag:
   - Compound generation
   - Chemical language model
@@ -37,3 +38,4 @@ Publication: https://doi.org/10.1038/s41467-025-56349-0
 Source Code: https://github.com/iipharma/transpharmer-repo
 License: MIT
 Contributor: arnaucoma24
+Incorporation Date: '2026-09-24'
