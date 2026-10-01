@@ -2,7 +2,7 @@
 
 Generates new molecules that share the topological pharmacophore of an input reference compound while often changing its scaffold, useful for scaffold hopping. A GPT-style SMILES decoder prompted with a 72-bit pharmacophore fingerprint was trained on about 1.27 million GuacaMol (ChEMBL-derived) molecules. Designs seeded with a PLK1 inhibitor were synthesised, and three of four were sub-micromolar, the best at 5.1 nM. Sampling is stochastic, only about 18% of raw samples were valid and unique in that run, and outputs often keep moieties of the reference.
 
-This model was incorporated on 2026-09-24.Last packaged on 2026-09-28.
+This model was incorporated on 2026-09-24.Last packaged on 2026-10-01.
 
 ## Information
 ### Identifiers
@@ -50,11 +50,11 @@ _10 of 100 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `26`
 - **Environment Size (Mb):** `1170`
-- **Image Size (Mb):** `1235.49`
+- **Image Size (Mb):** `1235.5`
 
 **Computational Performance (seconds):**
-- 10 inputs: `740.84`
-- 100 inputs: `-1`
+- 10 inputs: `36.82`
+- 100 inputs: `884.09`
 - 10000 inputs: `-1`
 
 ### References
