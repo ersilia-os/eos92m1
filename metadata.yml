@@ -45,7 +45,7 @@ S3: https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos92m1.zip
 DockerHub: https://hub.docker.com/r/ersiliaos/eos92m1
 Docker Architecture: AMD64
 Model Size: 26.0
-Environment Size: 1169.0
+Environment Size: 1170.0
 Image Size: 1235.49
 Computational Performance 1: 740.84
 Computational Performance 2: -1.0
