@@ -39,16 +39,16 @@ Source Code: https://github.com/iipharma/transpharmer-repo
 License: MIT
 Contributor: arnaucoma24
 Incorporation Date: '2026-09-24'
-Last Packaging Date: '2026-09-28'
+Last Packaging Date: '2026-10-01'
 Release: v1.0.0
 S3: https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos92m1.zip
 DockerHub: https://hub.docker.com/r/ersiliaos/eos92m1
 Docker Architecture: AMD64
 Model Size: 26.0
 Environment Size: 1170.0
-Image Size: 1235.49
-Computational Performance 1: 740.84
-Computational Performance 2: -1.0
-Computational Performance 3: -1.0
+Image Size: 1235.5
+Computational Performance 1: 36.82
+Computational Performance 2: 100.37
+Computational Performance 3: 884.09
 Computational Performance 4: -1.0
 Computational Performance 5: -1.0
