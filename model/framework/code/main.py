@@ -30,15 +30,16 @@ generator = Generator(CHECKPOINT_PATH)
 
 
 # my model
-def my_model(smiles_list):
+def my_model(smiles_list, cache=True):
     outputs = []
-    for smi in smiles_list:
+    for i, smi in enumerate(smiles_list):
         try:
-            samples = generator.generate(smi, NUM_SAMPLES, BATCH_SIZE, MAX_RAW)
+            samples = generator.generate(smi, NUM_SAMPLES, BATCH_SIZE, MAX_RAW, use_cache=cache)
         except Exception:
             samples = []
         outputs.append(samples + [""] * (NUM_SAMPLES - len(samples)))
     return outputs
+
 
 
 # read SMILES from .csv file, assuming one column with header

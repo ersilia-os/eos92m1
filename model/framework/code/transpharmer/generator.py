@@ -6,7 +6,7 @@ from rdkit import Chem, RDLogger
 
 from .model import GPT, sample
 from .pharm import get_pharma_fp
-from .tokens import tokenize, untokenize
+from .tokens import PAD_TOKEN, STOI, tokenize, untokenize
 
 RDLogger.DisableLog("rdApp.*")
 
@@ -41,7 +41,7 @@ class Generator:
         self.model.load_state_dict(state)
         self.model.eval()
 
-    def _sample_batch(self, prop, batch_size):
+    def _sample_batch(self, prop, batch_size, use_cache):
         context = torch.tensor(tokenize(START_CONTEXT), dtype=torch.long).repeat(batch_size, 1)
         prop = prop.repeat(batch_size, 1)
         tokens = sample(
@@ -52,10 +52,14 @@ class Generator:
             sample_=True,
             top_k=None,
             prop=prop,
+            use_cache=use_cache,
+            # padding doubles as end-of-molecule, so a row that emits it is done and can leave
+            # the batch; untokenize() strips the padding that fills its remaining positions
+            eos_id=STOI[PAD_TOKEN],
         )
         return [untokenize(t) for t in tokens.cpu().numpy().tolist()]
 
-    def generate(self, smiles, n_samples, batch_size, max_raw):
+    def generate(self, smiles, n_samples, batch_size, max_raw, use_cache):
         """Sample up to ``n_samples`` valid, unique molecules sharing the pharmacophore of ``smiles``.
 
         The reference compound itself is never returned. Sampling stops once ``n_samples``
@@ -69,7 +73,7 @@ class Generator:
         found = []
         drawn = 0
         while len(found) < n_samples and drawn < max_raw:
-            for raw in self._sample_batch(prop, batch_size):
+            for raw in self._sample_batch(prop, batch_size, use_cache=use_cache):
                 gen = Chem.MolFromSmiles(raw) if raw else None
                 if gen is None:
                     continue
