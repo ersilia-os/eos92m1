@@ -1,8 +1,9 @@
 # TransPharmer Pharmacophore-Informed Molecule Generation
 
-Generates new molecules that share the topological pharmacophore of an input reference compound while often changing its scaffold, useful for scaffold hopping. A GPT-style SMILES decoder prompted with a 72-bit pharmacophore fingerprint was trained on about 1.27 million GuacaMol (ChEMBL-derived) molecules. Designs seeded with a PLK1 inhibitor were synthesised, and three of four were sub-micromolar, the best at 5.1 nM. Sampling is stochastic, only about 18% of raw samples were valid and unique in that run, and outputs often keep moieties of the reference.
+Generates new molecules conditioned on the topological pharmacophore of an input reference compound while often changing its scaffold, useful for scaffold hopping. A GPT-style SMILES decoder prompted with a 72-bit pharmacophore fingerprint was trained on about 1.27 million GuacaMol (ChEMBL-derived) molecules. Outputs carry no stereochemistry, and empty, unparsable or multi-component inputs return empty rows. Sampling is stochastic and outputs often keep moieties of the reference; the input, its stereoisomers, multi-component structures and repeats are removed.
 
-This model was incorporated on 2026-09-24.Last packaged on 2026-10-01.
+This model was incorporated on 2026-09-24.
+Last packaged on 2026-10-01.
 
 ## Information
 ### Identifiers
@@ -23,21 +24,21 @@ This model was incorporated on 2026-09-24.Last packaged on 2026-10-01.
 ### Output
 - **Output Dimension:** `100`
 - **Output Consistency:** `Variable`
-- **Interpretation:** Up to 100 generated molecules as SMILES that share the input compounds topological pharmacophore.
+- **Interpretation:** Up to 100 generated molecules as SMILES conditioned on the input compound's topological pharmacophore.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
 |------|------|-----------|-------------|
-| smi_00 | string |  | Generated compound index 0 sharing the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
-| smi_01 | string |  | Generated compound index 1 sharing the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
-| smi_02 | string |  | Generated compound index 2 sharing the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
-| smi_03 | string |  | Generated compound index 3 sharing the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
-| smi_04 | string |  | Generated compound index 4 sharing the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
-| smi_05 | string |  | Generated compound index 5 sharing the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
-| smi_06 | string |  | Generated compound index 6 sharing the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
-| smi_07 | string |  | Generated compound index 7 sharing the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
-| smi_08 | string |  | Generated compound index 8 sharing the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
-| smi_09 | string |  | Generated compound index 9 sharing the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
+| smi_00 | string |  | Generated compound index 0 conditioned on the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
+| smi_01 | string |  | Generated compound index 1 conditioned on the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
+| smi_02 | string |  | Generated compound index 2 conditioned on the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
+| smi_03 | string |  | Generated compound index 3 conditioned on the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
+| smi_04 | string |  | Generated compound index 4 conditioned on the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
+| smi_05 | string |  | Generated compound index 5 conditioned on the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
+| smi_06 | string |  | Generated compound index 6 conditioned on the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
+| smi_07 | string |  | Generated compound index 7 conditioned on the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
+| smi_08 | string |  | Generated compound index 8 conditioned on the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
+| smi_09 | string |  | Generated compound index 9 conditioned on the input's 72-bit pharmacophore fingerprint (empty if fewer than 100 were found) |
 
 _10 of 100 columns are shown_
 ### Source and Deployment
