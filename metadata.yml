@@ -2,13 +2,13 @@ Identifier: eos92m1
 Slug: transpharmer
 Status: Ready
 Title: TransPharmer Pharmacophore-Informed Molecule Generation
-Description: Generates new molecules conditioned on the topological
-  pharmacophore of an input reference compound while often changing its
-  scaffold, useful for scaffold hopping. A GPT-style SMILES decoder prompted
-  with a 72-bit pharmacophore fingerprint was trained on about 1.27 million
-  GuacaMol (ChEMBL-derived) molecules. Outputs carry no stereochemistry, and
-  empty, unparsable or multi-component inputs return empty rows. Sampling is
-  stochastic and outputs often keep moieties of the reference; the input, its
+Description: Generates new molecules conditioned on the topological 
+  pharmacophore of an input reference compound while often changing its 
+  scaffold, useful for scaffold hopping. A GPT-style SMILES decoder prompted 
+  with a 72-bit pharmacophore fingerprint was trained on about 1.27 million 
+  GuacaMol (ChEMBL-derived) molecules. Outputs carry no stereochemistry, and 
+  empty, unparsable or multi-component inputs return empty rows. Sampling is 
+  stochastic and outputs often keep moieties of the reference; the input, its 
   stereoisomers, multi-component structures and repeats are removed.
 Deployment:
   - Local
@@ -24,7 +24,7 @@ Output:
 Output Dimension: 100
 Output Consistency: Variable
 Interpretation: Up to 100 generated molecules as SMILES conditioned on the input
-  compound's topological pharmacophore.
+  compounds topological pharmacophore.
 Tag:
   - Compound generation
   - Chemical language model
