@@ -24,7 +24,7 @@ Last packaged on 2026-10-01.
 ### Output
 - **Output Dimension:** `100`
 - **Output Consistency:** `Variable`
-- **Interpretation:** Up to 100 generated molecules as SMILES conditioned on the input compound's topological pharmacophore.
+- **Interpretation:** Up to 100 generated molecules as SMILES conditioned on the input compounds topological pharmacophore.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
@@ -49,7 +49,7 @@ _10 of 100 columns are shown_
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos92m1.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos92m1.zip)
 
 ### Resource Consumption
-- **Model Size (Mb):** `26`
+- **Model Size (Mb):** `49`
 - **Environment Size (Mb):** `1170`
 - **Image Size (Mb):** `1235.5`
 
