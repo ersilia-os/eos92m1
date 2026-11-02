@@ -14,13 +14,11 @@ sys.path.insert(0, root)
 
 from transpharmer import Generator
 
-# pretrained 72-bit pharmacophore-conditioned checkpoint (fetched with eosvc)
+# pretrained 72-bit pharmacophore-conditioned checkpoint (26 MB, stored in this repository)
 CHECKPOINT_PATH = os.path.join(root, "..", "..", "checkpoints", "guacamol_pc_72bit.pt")
-# The reference model has no KV cache, so each raw SMILES costs a full 100-step
-# forward pass (~1s/molecule on CPU with default torch threading). Empirically,
-# a single 200-molecule batch typically yields >100 valid, unique, non-reference
-# molecules, so MAX_RAW allows up to 3 batches (~10-15 min worst case per input)
-# before padding remaining slots with empty strings.
+# Each raw SMILES is sampled with a KV cache and a batch leaves as rows finish. MAX_RAW caps the
+# raw SMILES drawn per input (3 batches); inputs that do not fill all slots are padded with empty
+# strings. The number of molecules kept is reported per input in the run log.
 NUM_SAMPLES = 100  # molecules returned per input; must match run_columns.csv
 BATCH_SIZE = 200  # raw SMILES drawn per sampling round
 MAX_RAW = 600  # raw SMILES drawn per input before giving up on filling all slots
@@ -32,10 +30,15 @@ generator = Generator(CHECKPOINT_PATH)
 # my model
 def my_model(smiles_list, cache=True):
     outputs = []
-    for i, smi in enumerate(smiles_list):
+    for smi in smiles_list:
         try:
-            samples = generator.generate(smi, NUM_SAMPLES, BATCH_SIZE, MAX_RAW, use_cache=cache)
-        except Exception:
+            samples = generator.generate(
+                smi, NUM_SAMPLES, BATCH_SIZE, MAX_RAW, use_cache=cache
+            )
+        except Exception as exc:
+            print(
+                "[ERROR] %r: %s: %s" % (smi, type(exc).__name__, exc), file=sys.stderr
+            )
             samples = []
         outputs.append(samples + [""] * (NUM_SAMPLES - len(samples)))
     return outputs
