@@ -61,10 +61,11 @@ class Generator:
 
         Every raw sample is re-parsed and must be a single component with an InChIKey. The
         input is never returned: any output with the input's first InChIKey block is dropped,
-        so stereoisomers of the input count as the input. Repeats are dropped on the full
-        InChIKey. Sampling stops once ``n_samples`` molecules are collected or ``max_raw`` raw
-        SMILES have been drawn. If sampling fails part-way, the molecules found so far are
-        returned and the error goes to stderr.
+        so stereoisomers of the input count as the input. Repeats are dropped on the first
+        InChIKey block too, so stereoisomers of one output count as repeats. Sampling stops
+        once ``n_samples`` molecules are collected or ``max_raw`` raw SMILES have been drawn.
+        If sampling fails part-way, the molecules found so far are returned and the error
+        goes to stderr.
 
         Raises
         ------

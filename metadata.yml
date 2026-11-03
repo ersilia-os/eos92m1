@@ -23,8 +23,8 @@ Output:
   - Compound
 Output Dimension: 100
 Output Consistency: Variable
-Interpretation: Up to 100 generated molecules as SMILES conditioned on the input
-  compounds topological pharmacophore.
+Interpretation: Up to 100 generated molecules as SMILES conditioned on the
+  topological pharmacophore of the input compound.
 Tag:
   - Compound generation
   - Chemical language model
