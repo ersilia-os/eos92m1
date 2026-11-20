@@ -24,7 +24,7 @@ Last packaged on 2026-11-02.
 ### Output
 - **Output Dimension:** `100`
 - **Output Consistency:** `Variable`
-- **Interpretation:** Up to 100 generated molecules as SMILES conditioned on the input compounds topological pharmacophore.
+- **Interpretation:** Up to 100 generated molecules as SMILES conditioned on the topological pharmacophore of the input compound.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
@@ -47,6 +47,7 @@ _10 of 100 columns are shown_
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos92m1](https://hub.docker.com/r/ersiliaos/eos92m1)
 - **Docker Architecture:** `AMD64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos92m1.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos92m1.zip)
+- **Apptainer**: [https://models-sif.s3.eu-north-1.amazonaws.com/eos92m1_v2.sif](https://models-sif.s3.eu-north-1.amazonaws.com/eos92m1_v2.sif)
 
 ### Resource Consumption
 - **Model Size (Mb):** `49`
