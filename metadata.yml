@@ -23,7 +23,7 @@ Output:
   - Compound
 Output Dimension: 100
 Output Consistency: Variable
-Interpretation: Up to 100 generated molecules as SMILES conditioned on the
+Interpretation: Up to 100 generated molecules as SMILES conditioned on the 
   topological pharmacophore of the input compound.
 Tag:
   - Compound generation
@@ -40,7 +40,7 @@ License: MIT
 Contributor: arnaucoma24
 Incorporation Date: '2026-09-24'
 Last Packaging Date: '2026-11-02'
-Release: v1.0.0
+Release: v2.0.0
 S3: https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos92m1.zip
 DockerHub: https://hub.docker.com/r/ersiliaos/eos92m1
 Docker Architecture: AMD64
